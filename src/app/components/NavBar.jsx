@@ -1,5 +1,6 @@
 
 "use client";
+
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 // import { usePathname } from 'next/navigation'
@@ -13,9 +14,9 @@ export default function NavBar() {
       <nav className='flex justify-center items-center py-3'>
         <ul className='flex space-x-4'>
           <li><Link href='/'>Home</Link></li>
-          <li><Link href='/about'>About</Link></li>
-          <li><Link href='/services'>Services</Link></li>
-          <li><Link href='/contact'>Contact</Link></li>
+          <li><Link href='/post'>Post</Link></li>
+          <li><Link href='/meals'>Meals</Link></li>
+          {/* <li><Link href='/contact'>Contact</Link></li> */}
           
          </ul>
       </nav>

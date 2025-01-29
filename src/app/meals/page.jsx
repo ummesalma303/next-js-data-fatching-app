@@ -1,8 +1,14 @@
 // "use client"
 import Link from 'next/link';
 import MealSearchInput from './components/MealSearchInput';
+import Image from 'next/image';
 // import React, { useEffect, useState } from 'react'
 
+
+export const metadata = {
+  title: "All Meals",
+  description: "Meals loaded from MealDB API",
+};
 export default async function MealsPage({searchParams}) {
   const query = await searchParams
   console.log(query)
@@ -27,7 +33,7 @@ export default async function MealsPage({searchParams}) {
     // useEffect(()=>{
     //     fetchMeals()
     // },[search])
-  //  console.log(meals)
+   console.log(meals)
   return (
     <div>
       <MealSearchInput/>
@@ -39,7 +45,9 @@ export default async function MealsPage({searchParams}) {
       {
         meals?.map((meal,i)=>(
           <Link href={`${meal.idMeal}`}>
-        <div className='border-2 p-4'>
+        <div className='border-2 p-4' key={i}>
+        <Image className='' width={300} height={40} src={meal?.strMealThumb} alt="" />
+          {/* <img className='w-36 h-24' src={meal?.strMealThumb} alt="" /> */}
           <h2>{i+1}/ {meal?.strMeal}</h2>
           <p> {meal?.strInstructions?.slice(0,20)}</p>
         </div>

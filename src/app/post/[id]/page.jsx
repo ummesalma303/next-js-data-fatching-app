@@ -9,7 +9,7 @@ import React, { useEffect, useState } from 'react'
 //     return data
 // }
 
-export default async function SinglePost() {
+export default function SinglePost() {
     const [post,setPost] = useState()
     // const id = await params.id
     const params = useParams()
@@ -26,8 +26,9 @@ export default async function SinglePost() {
     // console.log(params?.id)
     // console.log(post)
   return (
-    <div>
-        <h1>post</h1>
+    <div className='border-2 w-1/2 mx-auto p-8 my-20'>
+      <h2 className='font-semibold text-2xl'>Title: {post?.title}</h2>
+        <p>post {post?.body}</p>
       
     </div>
   )

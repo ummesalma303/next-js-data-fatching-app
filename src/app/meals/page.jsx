@@ -2,8 +2,15 @@
 import Link from 'next/link';
 import MealSearchInput from './components/MealSearchInput';
 import Image from 'next/image';
+import { Mona_Sans, Playfair } from 'next/font/google';
 // import React, { useEffect, useState } from 'react'
 
+
+
+const mona = Playfair({
+  weight:["400"],
+  subsets: ['latin'],
+})
 
 export const metadata = {
   title: "All Meals",
@@ -41,7 +48,7 @@ export default async function MealsPage({searchParams}) {
             <input className='  px-3 border-2' type="text" placeholder='search here...' />
         </div> */}
       <h2 className='text-center'>total data: {meals?.length}</h2>
-      <div className="grid grid-cols-4 w-11/12 mx-auto gap-6">
+      <div className={`grid grid-cols-4 w-11/12 mx-auto gap-6  ${mona.className} antialiased`}>
       {
         meals?.map((meal,i)=>(
           <Link href={`${meal.idMeal}`}>

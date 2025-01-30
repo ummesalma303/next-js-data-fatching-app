@@ -9,6 +9,6 @@ function dbConnect() {
           deprecationErrors: true,
         }
       });
-      return client.db('plantNet-session').collection('plants')
+      return client.db('practice-next-js').collection('practice-data')
 }
 export default dbConnect

@@ -4,14 +4,18 @@ import React, { useEffect, useState } from 'react'
 const getData= async () => {
     // const data = await fetch('http://localhost:3000/api/items')
 }
+export const dynamic = 'force-dynamic'
 export default function ProductPage() {
     // const res = await fetch('http://localhost:3000/api/items')
     // const data = await res.json()
     // console.log(data)
-   const [posts,setPosts] = useState([])
+   const [posts,setPosts] = useState([]);
     //    const post = await getPost()
        useEffect(() => {       
   
+        // fetch('http://localhost:3000/api/items',{
+        //   cache: 'force-cache'
+        // })
         fetch('http://localhost:3000/api/items')
        .then(res=>res.json())
        .then(data=> {

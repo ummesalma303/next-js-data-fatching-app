@@ -16,6 +16,8 @@ export default function NavBar() {
           <li><Link href='/'>Home</Link></li>
           <li><Link href='/post'>Post</Link></li>
           <li><Link href='/meals'>Meals</Link></li>
+          <li><Link href='/products'>Products</Link></li>
+          <li><Link href='/products/add'>Add Products</Link></li>
           {/* <li><Link href='/contact'>Contact</Link></li> */}
           
          </ul>

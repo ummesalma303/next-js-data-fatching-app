@@ -19,7 +19,10 @@ console.log(data)
 
 
 export async function POST(req) {
-    const postdata = await req.body
+    // const postdataBody = await req.body
+    const postdata = await req.json()
+    console.log('post data------->',postdata)
+    // console.log('post data Body ------->',postdataBody)
     const result = await dbConnect().insertOne(postdata)
     return Response.json({ result })
 }

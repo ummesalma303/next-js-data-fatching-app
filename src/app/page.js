@@ -1,8 +1,15 @@
 import React from 'react'
+import { authOptions } from './api/auth/[...nextauth]/route'
+import { getServerSession } from 'next-auth'
 
-export default function Home() {
+export default async function Home() {
+  
+  const session = await getServerSession( authOptions)
   return (
     <div>
+      {
+            JSON.stringify(session)
+        }
       <h2>Hello world</h2>
     </div>
   )

@@ -18,7 +18,7 @@ export default function ProductAddForm() {
       price
     }
     console.log(productData)
-    const res = await fetch('http://localhost:3000/api/items',{
+    const res = await fetch('https://next-js-data-fatching-app.vercel.app/api/items',{
         method: "POST",
         body: JSON.stringify(productData),
         headers: {
